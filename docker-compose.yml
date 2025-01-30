@@ -21,6 +21,8 @@ services:
       - DB_DATABASE=filament
       - DB_USERNAME=root
       - DB_PASSWORD=root
+      - PUID=1000
+      - PGID=1000
 
   webserver:
     image: nginx:alpine
