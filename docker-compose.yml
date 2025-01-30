@@ -15,11 +15,12 @@ services:
     depends_on:
       - mysql
     environment:
+      - DB_CONNECTION=mysql
       - DB_HOST=mysql
       - DB_PORT=3306
       - DB_DATABASE=filament
       - DB_USERNAME=root
-      - DB_PASSWORD=4a8k73@8whQ
+      - DB_PASSWORD=root
 
   webserver:
     image: nginx:alpine

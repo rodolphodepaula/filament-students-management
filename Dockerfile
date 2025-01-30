@@ -19,5 +19,5 @@ RUN mkdir -p /var/www/storage/logs /var/www/bootstrap/cache && \
     chown -R www-data:www-data /var/www && \
     chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
-# Definir usuário do contêiner no final
-USER www-data
+# Espera o MySQL iniciar antes de rodar as migrations (Opcional, pode rodar manualmente depois)
+CMD ["sh", "-c", "sleep 10 && php artisan migrate && php-fpm"]
